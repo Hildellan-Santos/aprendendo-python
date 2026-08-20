@@ -1,1 +1,34 @@
+nome = input(" digite seu nome: ")
+idade = input("digite sua idade: ")
+senha_usuario = input("digite sua senha: ")
 
+try:
+    idade = int(idade)  # Converte a idade para inteiro para comparação
+except ValueError:
+    print(f"{nome}, por favor, insira uma idade válida.")
+    exit()
+
+if nome == "hildellan" and idade >= 18 and senha_usuario == "1234":
+    print("acesso permitido")
+
+    nota1_texto = input("primeira nota: ")
+    nota2_texto = input("segunda nota: ")
+    try:
+        nota1 = float(nota1_texto)
+        nota2 = float(nota2_texto)
+    except ValueError:
+        print(f"{nome}, por favor, insira notas válidas.")
+        exit()
+
+    if (nota1 < 0 or nota1 > 10) or (nota2 < 0 or nota2 > 10):
+        print(f"{nome}, suas notas são inválidas. Tente novamente. As notas não podem ser maiores que 10 ou menores que 0.")
+    else:
+        media = (nota1 + nota2) / 2
+        if media >= 7:
+            print(f"Parabéns {nome}, sua média é {media:.2f}. Você passou com média acima ou igual a 7.")
+        elif media >= 5:
+            print(f"{nome}, você está de recuperação. Sua média é {media:.2f}, estando na faixa de 5 a menor que 7.")
+        else:
+            print(f"Você está reprovado, {nome}. Sua média é {media:.2f}, que é menor que 5.")
+else:
+    print("acesso negado")
