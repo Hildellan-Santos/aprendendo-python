@@ -1,7 +1,3 @@
-Cia Python
-
-Repositório criado para armazenar exercícios e projetos desenvolvidos durante meus estudos de Python.
-
 Projetos
 
 Projeto 01 — Sistema de acesso e notas
